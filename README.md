@@ -9,11 +9,6 @@ A machine learning project that predicts car prices using a Random Forest model.
 - [Model](#model)
 - [Performance](#performance)
 - [Setup](#setup)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
-
 ## Introduction
 This project aims to predict car prices based on various features using a machine learning approach. The Random Forest model was chosen for its effectiveness in handling regression problems and was trained to achieve a reasonable accuracy level.
 
@@ -65,4 +60,4 @@ The model's performance metrics are as follows:
 ## Setup
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/car-price-prediction.git
+   git clone https://github.com/abhishek-chaudhary26/Car_price_prediction.git
