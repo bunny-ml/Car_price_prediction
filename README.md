@@ -41,10 +41,6 @@ The dataset used for this car price prediction project consists of **19,237 entr
 17. **Color**: The exterior color of the car.
 18. **Airbags**: Number of airbags in the car.
 
-### Notes
-- **Data Preprocessing**: Columns like `Levy`, `Engine volume`, and `Mileage` may require cleaning and conversion to numerical values for modeling purposes. Categorical features such as `Manufacturer`, `Fuel type`, and `Gear box type` might need encoding.
-- **Potential Feature Engineering**: Consider extracting additional insights, such as the age of the car from `Prod. year` or binning mileage values into categories.
-
 ## Model
 - **Algorithm**: Random Forest
 - **Metrics**: The model was evaluated using standard regression metrics, achieving an accuracy of **78%**.
