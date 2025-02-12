@@ -1,2 +1,3 @@
 pandas
-sk-learn
+scikit-learn
+seaborn
