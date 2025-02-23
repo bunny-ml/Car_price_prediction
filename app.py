@@ -5,7 +5,7 @@ import pandas as pd
 app = Flask(__name__)
 
 # Load the trained model
-with open('car_price_model.pkl', 'rb') as file:
+with open('random_forest_model.pkl', 'rb') as file:
     model = pickle.load(file)
 
 @app.route('/')

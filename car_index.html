@@ -2,10 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Recommendation System">
+    <link rel="stylesheet" href="style.css">
+
+        <link rel="icon" href="https://abhishek-chaudhary26.github.io/images/logo.png" type="image/png">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="style.css">
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <title>Car Price Prediction</title>
+   
 </head>
+<div id="particles-js"></div
 <body>
+    <header class="top-header">
+        <div class="logo">
+            <img src="https://abhishek-chaudhary26.github.io/images/logo.png" alt="Logo">
+            <span>Car Price Prediction </span>
+        </div>
+        <div class="hamburger-menu" id="hamburger-menu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="navbar" id="navbar">
+            <a href="https://abhishek-chaudhary26.github.io/index.html" class = 'cta-button'>Home Page</a>
+            <!-- <a href="blog.html">Blog</a> -->
+            <!-- <a href="projects.html">Projects</a> -->
+            <a href="#contact" class= 'cta-button'>Contact</a>
+        </nav>
+    </header>
+    <div id="particles-js"></div>
+<main class="main-content">
     <h1>Car Price Prediction</h1>
+    
     <form action="/predict" method="post">
         <label for="present_price">Present Price:</label>
         <input type="text" name="present_price" required><br>
@@ -34,5 +64,29 @@
     {% if prediction %}
         <h2>Predicted Price: ${{ prediction }}</h2>
     {% endif %}
+</form>
+</div>
+</main>
+<section id="contact" class="main-content">
+<h2>Contact Me</h2>
+<form id="contact-form">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" autocomplete="off" required>
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" autocomplete="off" required>
+  <label for="message">Message:</label>
+  <textarea id="message" name="message" rows="4" autocomplete="off" required></textarea>
+  <input type="submit" value="Send Message">
+  <p id="form-response" style="display:none; color: green;">Thank you! Your message has been sent.</p>
+</form>
+</section>
+
+
+
+<footer>
+    <p>© 2024 Abhishek. All rights reserved. | <a href="https://github.com/abhishek-chaudhary26">GitHub</a> | <a href="https://www.linkedin.com/in/abhishek-chaudhary26/">LinkedIn</a></p>
+</footer>
+
+<script src="https://abhishek-chaudhary26.github.io/script.js"></script>
 </body>
 </html>
