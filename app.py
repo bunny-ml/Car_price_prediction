@@ -1,10 +1,20 @@
 from flask import Flask, render_template, request
+import pickle
+import json
+import pandas as pd
 
 app = Flask(__name__)
 
+# model 
+with open('/workspace/Car_price_prediction/random_forest_model.pkl' , 'rb') as file:
+    model = pickle.load(file)
+
+with open('/workspace/Car_price_prediction/options.json', 'r') as file:
+    options = json.load(file)
+
 @app.route('/')
 def home():
-    return render_template('car_index.html')
+    return render_template('car_index.html', options= options)
 
 @app.route('/predict', methods=['POST'])
 def prediction():
