@@ -25,14 +25,17 @@ except FileNotFoundError:
     print("Error: random_forest_model.pkl not found.")
 
 # Load dropdown options from JSON file
-try:
-    with open('/workspace/Car_price_prediction/options.json', 'r') as file:
-        options = json.load(file)
-except FileNotFoundError:
-    print("Error: options.json not found.")
+def load_options():
+    try:
+        with open('options.json', 'r') as file:
+            return json.load(file)
+    except FileNotFoundError:
+        print("Error: options.json not found.")
+        return {}
 
 @app.route('/')
 def home():
+    options = load_options()
     print("Home route accessed")
     return render_template('car_index.html', options=options)
 
