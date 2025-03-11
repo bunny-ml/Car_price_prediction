@@ -19,7 +19,7 @@ except FileNotFoundError:
 
 # Load trained model
 try:
-    with open('/workspace/Car_price_prediction/random_forest_model.pkl', 'rb') as file:
+    with open('random_forest_model.pkl', 'rb') as file:
         model = pickle.load(file)
 except FileNotFoundError:
     print("Error: random_forest_model.pkl not found.")
