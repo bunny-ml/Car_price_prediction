@@ -40,55 +40,108 @@
 
         <label for="Manufacturer">Manufacturer</label>
         <select name="Manufacturer" required>
-            {% for seller in seller_types %}
-                <option value="{{ loop.index0 }}">{{ Manufacturer}}</option>
+            {% for manufacturer in options ['Manufacturer'] %}
+                <option value="{{ loop.index0 }}">{{ manufacturer}}</option>
             {% endfor %}
         </select><br>
 
         <label for="Model">Model</label>
-        <input type="text" name="Model" required><br>
+        <select name="Model" required>
+            {% for model in options ['Model'] %}
+                <option value="{{ loop.index0 }}">{{ model }}</option>
+            {% endfor %}
+        </select><br>
 
         <label for="Prod.year">Production year</label>
-        <input type="text" name="Prod.year" required><br>
+        <select name="Prod.year" required>
+            {% for prod_year in options ['Prod_year'] %}
+                <option value="{{ loop.index0 }}">{{ prod_year }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label for="car_age">Car Age</label>
+        <select name="car_age" required>
+            {% for car in options ['car_age'] %}
+                <option value="{{ loop.index0 }}">{{ car }}</option>
+            {% endfor %}
+        </select><br>
+        
+        <label for="Leather_interior">Leather Interior</label>
+        <select name="Leather_interior" required>
+            {% for leather in options ['Leather_interior'] %}
+                <option value="{{ loop.index0 }}">{{ leather }}</option>
+            {% endfor %}
+        </select><br>
 
         <label for="Category">Category</label>
-        <input type="text" name="Category" required><br>
+        <select name="Category" required>
+            {% for category in options ['Category'] %}
+                <option value="{{ loop.index0 }}">{{ category }}</option>
+            {% endfor %}
+        </select><br>
 
-        <label for="Leather interior">Leather interior</label>
-        <input type="text" name="Leather interior" required><br>
+        
 
         <label for="Fuel type">Fuel type</label>
         <select name="Fuel_type" required>
             {% for fuel in options['Fuel_type'] %}
-                <option value="{{ loop.index0 }}">{{ Fuel_type}}</option>
+                <option value="{{ loop.index0 }}">{{ fuel}}</option>
             {% endfor %}
+        </select><br>
 
         <label for="Engine volume">Engine volume</label>
-        <input type="text" name="Engin volume" required><br>
+        <select name="Engine_volume" required>
+            {% for Engine in options['Engine_volume'] %}
+                <option value="{{ loop.index0 }}">{{ Engine }}</option>
+            {% endfor %}
+        </select><br>
 
         <label for="Mileage">Mileage</label>
         <input type="text" name="Mileage" required><br>
 
         <label for="Cylinders">Number of Cylinders</label>
-        <input type="text" name="Cylinders" required><br>
+        <select name="Cylinders" required>
+            {% for cylinders in options['Cylinders'] %}
+                <option value="{{ loop.index0 }}">{{ cylinders }}</option>
+            {% endfor %}
+        </select><br>
 
         <label for="Gear box type">Gear box type</label>
-        <input type="text" name="Gear box type" required><br>
+        <select name="Gear_box_type" required>
+            {% for type in options['Gear_box_type'] %}
+                <option value="{{ loop.index0 }}">{{ type }}</option>
+            {% endfor %}
+        </select><br>
 
         <label for="Drive wheels">Drive wheels</label>
-        <input type="text" name="Drive wheels" required><br>
+        <select name="Drive_wheels" required>
+            {% for Drive in options['Drive_wheels'] %}
+                <option value="{{ loop.index0 }}">{{ Drive }}</option>
+            {% endfor %}
+        </select><br>
 
         <label for="Wheel">Wheel</label>
-        <input type="text" name="Wheel" required><br>
+        <select name="Wheel" required>
+            {% for wheel in options['Wheel'] %}
+                <option value="{{ loop.index0 }}">{{ wheel }}</option>
+            {% endfor %}
+        </select><br>
 
         <label for="Color">Color</label>
-        <input type="text" name="Color" required><br>
+        <select name="Color" required>
+            {% for color in options['Color'] %}
+                <option value="{{ loop.index0 }}">{{ color }}</option>
+            {% endfor %}
+        </select><br>
 
         <label for="Airbags">Airbags</label>
-        <input type="text" name="Airbags" required><br>
+        <select name="Airbags" required>
+            {% for airbags in options['Airbags'] %}
+                <option value="{{ loop.index0 }}">{{ airbags }}</option>
+            {% endfor %}
+        </select><br>
             
-        <label for="car_age ">car_age </label>
-        <input type="text" name="car_age " required><br>
+       
 
         <input type="submit" value="Predict Price">
     </form>
