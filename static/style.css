@@ -273,3 +273,19 @@ form {
     margin-bottom: 20px;
     color: #4caf50;
  }
+
+ .prediction-box {
+    background-color: #f4f4f4;
+    border: 2px solid #ccc;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.prediction-box h2 {
+    margin-bottom: 10px;
+    color: #444;
+}

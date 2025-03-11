@@ -49,7 +49,7 @@
             </select><br>
 
             <label for="Prod_year">Production year</label>
-            <select name="Prod.year" required>
+            <select name="Prod_year" required>
                 {% for prod_year in options['Prod_year'] %}
                     <option value="{{ prod_year }}">{{ prod_year }}</option>
                 {% endfor %}
@@ -128,6 +128,9 @@
                 {% endfor %}
             </select><br>
 
+            <label for="Levy">Levy</label>
+            <input type="number" name="Levy" required><br>
+
             <label for="Airbags">Airbags</label>
             <select name="Airbags" required>
                 {% for airbags in options['Airbags'] %}
@@ -137,10 +140,17 @@
 
             <input type="submit" value="Predict Price">
         </form>
-
         {% if prediction %}
-            <h2>Predicted Price: {{ prediction }}</h2>
-        {% endif %}
+        <div class="prediction-result">
+            <h2>{{ prediction }}</h2>
+        </div>
+    {% endif %}
+    
+    {% if error %}
+        <div class="error-message">
+            <p style="color: red;">{{ error }}</p>
+        </div>
+    {% endif %}
     </main>
 
     <section id="contact" class="main-content">
