@@ -175,24 +175,8 @@ a {
     text-decoration: none;
 }
 
-/* drop down menu css */
-
-/* select elements */
-select {
-    width: 100%; /* Full width */
-    padding: 12px; /* Some padding */ 
-    border: 1px solid #ccc; /* Gray border */
-    border-radius: 4px; /* Rounded borders */
-    box-sizing: border-box; /* Make sure that padding and width stays in place */
-    margin-top: 6px; /* Add a top margin */
-    margin-bottom: 16px; /* Bottom margin */
-    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
-  }
-  
- 
-
 /* Style inputs with type="text", select elements and textareas */
-input[type=text], textarea {
+input[type=text], textarea , select{
     width: 100%; /* Full width */
     padding: 12px; /* Some padding */ 
     border: 1px solid #444; /* Gray border */
@@ -202,6 +186,18 @@ input[type=text], textarea {
     margin-bottom: 16px; /* Bottom margin */
     resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
   }
+
+  input[type=number], textarea , select{
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #444; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+
   input[type=email] {
     width: 100%; /* Full width */
     padding: 12px; /* Some padding */ 
@@ -231,7 +227,7 @@ input[type=text], textarea {
   
 
 /* Input and Textarea Styles */
-input, textarea {
+input, textarea , select{
     width: 100%;
     padding: 10px;
     margin: 10px 0;
@@ -242,7 +238,7 @@ input, textarea {
     transition: background-color 0.3s, border-color 0.3s; /* Smooth interaction */
 }
 /* Focus State */
-input:focus, textarea:focus {
+input:focus, textarea:focus ,select:focus{
     background-color: #444; /* Slightly lighter background on focus */
     color: #fff; /* Ensure text is visible */
     border: 1px solid #4caf50; /* Highlight border with green */

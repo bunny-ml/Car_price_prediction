@@ -5,20 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Recommendation System">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <!-- <link rel="stylesheet" href="/workspace/Car_price_prediction/static/style.css"> -->
-
     <link rel="icon" href="https://abhishek-chaudhary-ml-portfolio.netlify.app/images/logo.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-        
     <title>Car Price Prediction</title>
-   
 </head>
-<div id="particles-js"></div>
+
 <body>
     <header class="top-header">
         <div class="logo">
             <img src="https://abhishek-chaudhary-ml-portfolio.netlify.app/images/logo.png" alt="Logo">
-            <span>Car Price Prediction </span>
+            <span>Car Price Prediction</span>
         </div>
         <div class="hamburger-menu" id="hamburger-menu">
             <div class="line"></div>
@@ -26,152 +22,146 @@
             <div class="line"></div>
         </div>
         <nav class="navbar" id="navbar">
-            <a href="https://abhishek-chaudhary-ml-portfolio.netlify.app/" class = 'cta-button'>Home Page</a>
-            <!-- <a href="blog.html">Blog</a> -->
-            <!-- <a href="projects.html">Projects</a> -->
-            <a href="#contact" class= 'cta-button'>Contact</a>
+            <a href="https://abhishek-chaudhary-ml-portfolio.netlify.app/" class="cta-button">Home Page</a>
+            <a href="#contact" class="cta-button">Contact</a>
         </nav>
     </header>
+
     <div id="particles-js"></div>
-<main class="main-content">
-    <h1>Car Price Prediction</h1>
-    
-    <form action= "{{url_for('prediction')}}" method="post">
 
-        <label for="Manufacturer">Manufacturer</label>
-        <select name="Manufacturer" required>
-            {% for manufacturer in options ['Manufacturer'] %}
-                <option value="{{ loop.index0 }}">{{ manufacturer}}</option>
-            {% endfor %}
-        </select><br>
+    <main class="main-content">
+        <h1>Car Price Prediction</h1>
 
-        <label for="Model">Model</label>
-        <select name="Model" required>
-            {% for model in options ['Model'] %}
-                <option value="{{ loop.index0 }}">{{ model }}</option>
-            {% endfor %}
-        </select><br>
+        <form action="{{ url_for('prediction') }}" method="post">
 
-        <label for="Prod.year">Production year</label>
-        <select name="Prod.year" required>
-            {% for prod_year in options ['Prod_year'] %}
-                <option value="{{ loop.index0 }}">{{ prod_year }}</option>
-            {% endfor %}
-        </select><br>
+            <label for="Manufacturer">Manufacturer</label>
+            <select name="Manufacturer" required>
+                {% for manufacturer in options['Manufacturer'] %}
+                    <option value="{{ manufacturer }}">{{ manufacturer }}</option>
+                {% endfor %}
+            </select><br>
 
-        <label for="car_age">Car Age</label>
-        <select name="car_age" required>
-            {% for car in options ['car_age'] %}
-                <option value="{{ loop.index0 }}">{{ car }}</option>
-            {% endfor %}
-        </select><br>
-        
-        <label for="Leather_interior">Leather Interior</label>
-        <select name="Leather_interior" required>
-            {% for leather in options ['Leather_interior'] %}
-                <option value="{{ loop.index0 }}">{{ leather }}</option>
-            {% endfor %}
-        </select><br>
+            <label for="Model">Model</label>
+            <select name="Model" required>
+                {% for model in options['Model'] %}
+                    <option value="{{ model }}">{{ model }}</option>
+                {% endfor %}
+            </select><br>
 
-        <label for="Category">Category</label>
-        <select name="Category" required>
-            {% for category in options ['Category'] %}
-                <option value="{{ loop.index0 }}">{{ category }}</option>
-            {% endfor %}
-        </select><br>
+            <label for="Prod_year">Production year</label>
+            <select name="Prod.year" required>
+                {% for prod_year in options['Prod_year'] %}
+                    <option value="{{ prod_year }}">{{ prod_year }}</option>
+                {% endfor %}
+            </select><br>
 
-        
+            <label for="car_age">Car Age</label>
+            <select name="car_age" required>
+                {% for car in options['car_age'] %}
+                    <option value="{{ car }}">{{ car }}</option>
+                {% endfor %}
+            </select><br>
 
-        <label for="Fuel type">Fuel type</label>
-        <select name="Fuel_type" required>
-            {% for fuel in options['Fuel_type'] %}
-                <option value="{{ loop.index0 }}">{{ fuel}}</option>
-            {% endfor %}
-        </select><br>
+            <label for="Leather_interior">Leather Interior</label>
+            <select name="Leather_interior" required>
+                {% for leather in options['Leather_interior'] %}
+                    <option value="{{ leather }}">{{ leather }}</option>
+                {% endfor %}
+            </select><br>
 
-        <label for="Engine volume">Engine volume</label>
-        <select name="Engine_volume" required>
-            {% for Engine in options['Engine_volume'] %}
-                <option value="{{ loop.index0 }}">{{ Engine }}</option>
-            {% endfor %}
-        </select><br>
+            <label for="Category">Category</label>
+            <select name="Category" required>
+                {% for category in options['Category'] %}
+                    <option value="{{ category }}">{{ category }}</option>
+                {% endfor %}
+            </select><br>
 
-        <label for="Mileage">Mileage</label>
-        <input type="text" name="Mileage" required><br>
+            <label for="Fuel_type">Fuel type</label>
+            <select name="Fuel_type" required>
+                {% for fuel in options['Fuel_type'] %}
+                    <option value="{{ fuel }}">{{ fuel }}</option>
+                {% endfor %}
+            </select><br>
 
-        <label for="Cylinders">Number of Cylinders</label>
-        <select name="Cylinders" required>
-            {% for cylinders in options['Cylinders'] %}
-                <option value="{{ loop.index0 }}">{{ cylinders }}</option>
-            {% endfor %}
-        </select><br>
+            <label for="Engine_volume">Engine volume</label>
+            <select name="Engine_volume" required>
+                {% for engine in options['Engine_volume'] %}
+                    <option value="{{ engine }}">{{ engine }}</option>
+                {% endfor %}
+            </select><br>
 
-        <label for="Gear box type">Gear box type</label>
-        <select name="Gear_box_type" required>
-            {% for type in options['Gear_box_type'] %}
-                <option value="{{ loop.index0 }}">{{ type }}</option>
-            {% endfor %}
-        </select><br>
+            <label for="Mileage">Mileage</label>
+            <input type="number" name="Mileage" required><br>
 
-        <label for="Drive wheels">Drive wheels</label>
-        <select name="Drive_wheels" required>
-            {% for Drive in options['Drive_wheels'] %}
-                <option value="{{ loop.index0 }}">{{ Drive }}</option>
-            {% endfor %}
-        </select><br>
+            <label for="Cylinders">Number of Cylinders</label>
+            <select name="Cylinders" required>
+                {% for cylinders in options['Cylinders'] %}
+                    <option value="{{ cylinders }}">{{ cylinders }}</option>
+                {% endfor %}
+            </select><br>
 
-        <label for="Wheel">Wheel</label>
-        <select name="Wheel" required>
-            {% for wheel in options['Wheel'] %}
-                <option value="{{ loop.index0 }}">{{ wheel }}</option>
-            {% endfor %}
-        </select><br>
+            <label for="Gear_box_type">Gear box type</label>
+            <select name="Gear_box_type" required>
+                {% for type in options['Gear_box_type'] %}
+                    <option value="{{ type }}">{{ type }}</option>
+                {% endfor %}
+            </select><br>
 
-        <label for="Color">Color</label>
-        <select name="Color" required>
-            {% for color in options['Color'] %}
-                <option value="{{ loop.index0 }}">{{ color }}</option>
-            {% endfor %}
-        </select><br>
+            <label for="Drive_wheels">Drive wheels</label>
+            <select name="Drive_wheels" required>
+                {% for drive in options['Drive_wheels'] %}
+                    <option value="{{ drive }}">{{ drive }}</option>
+                {% endfor %}
+            </select><br>
 
-        <label for="Airbags">Airbags</label>
-        <select name="Airbags" required>
-            {% for airbags in options['Airbags'] %}
-                <option value="{{ loop.index0 }}">{{ airbags }}</option>
-            {% endfor %}
-        </select><br>
-            
-       
+            <label for="Wheel">Wheel</label>
+            <select name="Wheel" required>
+                {% for wheel in options['Wheel'] %}
+                    <option value="{{ wheel }}">{{ wheel }}</option>
+                {% endfor %}
+            </select><br>
 
-        <input type="submit" value="Predict Price">
-    </form>
+            <label for="Color">Color</label>
+            <select name="Color" required>
+                {% for color in options['Color'] %}
+                    <option value="{{ color }}">{{ color }}</option>
+                {% endfor %}
+            </select><br>
 
-    {% if prediction %}
-        <h2>Predicted Price: ${{ prediction }}</h2>
-    {% endif %}
-</form>
-</div>
-</main>
-<section id="contact" class="main-content">
-<h2>Contact Me</h2>
-<form id="contact-form">
-  <label for="name">Name:</label>
-  <input type="text" id="name" name="name" autocomplete="off" required>
-  <label for="email">Email:</label>
-  <input type="email" id="email" name="email" autocomplete="off" required>
-  <label for="message">Message:</label>
-  <textarea id="message" name="message" rows="4" autocomplete="off" required></textarea>
-  <input type="submit" value="Send Message">
-  <p id="form-response" style="display:none; color: green;">Thank you! Your message has been sent.</p>
-</form>
-</section>
+            <label for="Airbags">Airbags</label>
+            <select name="Airbags" required>
+                {% for airbags in options['Airbags'] %}
+                    <option value="{{ airbags }}">{{ airbags }}</option>
+                {% endfor %}
+            </select><br>
 
+            <input type="submit" value="Predict Price">
+        </form>
 
+        {% if prediction %}
+            <h2>Predicted Price: {{ prediction }}</h2>
+        {% endif %}
+    </main>
 
-<footer>
-    <p>© 2024 Abhishek. All rights reserved. | <a href="https://github.com/bunny-ml">GitHub</a> | <a href="https://www.linkedin.com/in/abhishek-chaudhary26/">LinkedIn</a></p>
-</footer>
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-<script src="https://abhishek-chaudhary-ml-portfolio.netlify.app/script.mini.js"></script>
+    <section id="contact" class="main-content">
+        <h2>Contact Me</h2>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" autocomplete="off" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" autocomplete="off" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" autocomplete="off" required></textarea>
+            <input type="submit" value="Send Message">
+            <p id="form-response" style="display:none; color: green;">Thank you! Your message has been sent.</p>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2024 Abhishek. All rights reserved. | <a href="https://github.com/bunny-ml">GitHub</a> | <a href="https://www.linkedin.com/in/abhishek-chaudhary26/">LinkedIn</a></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://abhishek-chaudhary-ml-portfolio.netlify.app/script.mini.js"></script>
 </body>
 </html>
