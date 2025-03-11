@@ -33,9 +33,10 @@ def load_options():
         print("Error: options.json not found.")
         return {}
 
+options = load_options()
+
 @app.route('/')
 def home():
-    options = load_options()
     print("Home route accessed")
     return render_template('car_index.html', options=options)
 
