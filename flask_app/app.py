@@ -90,4 +90,4 @@ def prediction():
         return render_template('car_index.html', options=options, error="An error occurred during prediction.")
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=10000)
