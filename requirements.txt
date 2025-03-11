@@ -3,5 +3,5 @@ scikit-learn
 seaborn
 flask
 gunicorn
-pickle
+pickle5
 numpy
