@@ -50,10 +50,14 @@ Random Forest is a robust and versatile ensemble learning method that reduces ov
 
 ## Performance
 The model's performance metrics are as follows:
-- **Accuracy**: 78%
-- Further evaluation can be done using metrics like RMSE, MAE, etc.
+- **root mean square error**: 5233.182907157141
+- **score**: 78.07%
+- **mean square error**: 27386203.33976167
+- **cross validation mean**: 78.41%
+- **cross validation std**: 0.010616148940150123
+- **r2 score**: 78.07%
 
-## Setup
-1. Clone the repository:
+## Set**u****p
+1. Clone **the** repository:
    ```bash
    git clone https://github.com/abhishek-chaudhary26/Car_price_prediction.git
